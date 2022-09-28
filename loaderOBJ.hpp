@@ -1,3 +1,4 @@
+#include "common.h"
 #ifndef OBJLOADER_H
 #define OBJLOADER_H
 
