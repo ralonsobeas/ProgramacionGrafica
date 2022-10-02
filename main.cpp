@@ -47,9 +47,9 @@ int main(int argc, char** argv)
 		std::cout << "ERROR iniciando glew\n";
 
 	InputManager::init(window);
-	Object* cube = new Cube("cube.trg");
+	Object* cube = new Cube("triangle.trg");
 	cube->scale = glm::vec3(0.5f, 0.5f, 0.5f);
-	cube->position.z=3.0f;
+	cube->position.z=5.0f;
 	
 
 	Render* render=new Render();
@@ -58,7 +58,7 @@ int main(int argc, char** argv)
 	//scene->setCamera(new Camera(glm::vec3(0,0,0.5),glm::vec3(0,0,0),perspective));
 	scene->addLight(new Light(glm::vec4(-3.0, 0, 6.0, 1),glm::vec4(0, 0, 0, 1)));
 	scene->addLight(new Light(glm::vec4(3.0, 0, 6.0, 1), glm::vec4(0, 0, 0, 1)));
-	scene->setCamera(new Camera(glm::vec3(0, 0, 6.0), glm::vec3(0, 0, 0), perspective));
+	scene->setCamera(new Camera(glm::vec3(0, 0, 6.0), glm::vec3(cube->position.x, cube->position.y, cube->position.z), perspective));
 	scene->addObject(cube);
 	
 	render->setupObject(cube);
